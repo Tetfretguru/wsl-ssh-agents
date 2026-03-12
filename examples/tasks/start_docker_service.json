@@ -1,0 +1,19 @@
+{
+  "task_id": "demo-docker-up-001",
+  "thread_id": "thread-demo-002",
+  "target": "laptop-b",
+  "request": "Inicia billing-api con docker compose",
+  "steps": [
+    {
+      "id": "compose-up",
+      "type": "remote_cmd",
+      "command": "docker compose up -d billing-api"
+    },
+    {
+      "id": "check-container",
+      "type": "remote_fetch",
+      "command": "docker ps --format '{{.Names}} {{.Status}}' | grep billing-api",
+      "artifact": "billing-status.txt"
+    }
+  ]
+}

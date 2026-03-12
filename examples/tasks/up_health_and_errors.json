@@ -1,0 +1,24 @@
+{
+  "task_id": "demo-up-health-errors-001",
+  "thread_id": "thread-demo-003",
+  "target": "laptop-b",
+  "request": "Levanta servicio, valida health y trae errores",
+  "steps": [
+    {
+      "id": "service-up",
+      "type": "remote_cmd",
+      "command": "docker compose up -d billing-api"
+    },
+    {
+      "id": "health-check",
+      "type": "remote_cmd",
+      "command": "curl -fsS http://localhost:8080/health"
+    },
+    {
+      "id": "collect-errors",
+      "type": "remote_fetch",
+      "command": "docker logs --since 20m billing-api 2>&1 | grep -i error | tail -n 50",
+      "artifact": "billing-errors.txt"
+    }
+  ]
+}

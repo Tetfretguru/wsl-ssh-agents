@@ -1,0 +1,14 @@
+{
+  "task_id": "demo-find-file-001",
+  "thread_id": "thread-demo-001",
+  "target": "laptop-b",
+  "request": "Busca archivo .env en home del usuario",
+  "steps": [
+    {
+      "id": "find-env",
+      "type": "remote_fetch",
+      "command": "find ~ -maxdepth 4 -name '.env' 2>/dev/null",
+      "artifact": "find-env.txt"
+    }
+  ]
+}

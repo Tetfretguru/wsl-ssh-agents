@@ -1,0 +1,6 @@
+inventory/hosts.json
+policy/policy.json
+logs/tasks/
+artifacts/
+*.pyc
+__pycache__/

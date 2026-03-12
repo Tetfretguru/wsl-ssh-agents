@@ -1,0 +1,12 @@
+{
+  "deny_delete_without_approval": true,
+  "blocked_patterns": [
+    "(^|\\s)rm(\\s|$)",
+    "docker\\s+rm",
+    "docker\\s+system\\s+prune",
+    "docker\\s+volume\\s+prune",
+    "truncate\\s+-s\\s+0",
+    "mkfs",
+    "dd\\s+if=.*of=/dev/"
+  ]
+}
