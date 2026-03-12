@@ -48,3 +48,7 @@ python3 scripts/runner/control_plane.py \
 ## Core rule
 
 No delete without explicit user approval. See `POLICY.md`.
+
+## Installation guides
+
+- Destination node (Laptop B / WSL): `docs/runbook-destino.md`
